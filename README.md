@@ -1,4 +1,4 @@
-# Visual Sorting using Python
+# Visual Sorting in Python
 
 #Requirements
 matplotlib
