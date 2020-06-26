@@ -6,35 +6,50 @@ from sorting_algorithms.heap_sort import heap_sort
 from sorting_algorithms.quick_sort import quick_sort
 from matplotlib.animation import FuncAnimation
 from matplotlib import pyplot as plt
+from matplotlib.widgets import Button, Slider, RadioButtons
 import random
 
-n = 50
+# prompt for input
+n = 0
+while n <= 0:
+    n = int(input('Enter a number of items sorted (n > 0):\n'))
+
 data = [i for i in range(n, 0, -1)]
 random.shuffle(data)
 
 sort_dict = {
-    'selection_sort' : { 'title' : r'Selection Sort ($O(n^2)$)', 'generator' : selection_sort(data)},
-    'insertion_sort' : { 'title' : r'Insertion Sort ($O(n^2)$)', 'generator' : insertion_sort(data)},
-    'bubble_sort' : { 'title' : r'Bubble Sort ($O(n^2)$)', 'generator' : bubble_sort(data)},
-    'merge_sort' : { 'title' : r'Merge Sort ($O(n log(n))$)', 'generator' : merge_sort(data, 0, len(data))},
-    'heap_sort' : { 'title' : r'Heap Sort ($O(n log(n))$)', 'generator' : heap_sort(data)},
-    'quick_sort' : { 'title' : r'Quick Sort ($O(n log(n))$)', 'generator' : quick_sort(data, 0, len(data) - 1)},
+    's' : { 'title' : r'Selection Sort ($O(n^2)$)', 'generator' : selection_sort(data)},
+    'i' : { 'title' : r'Insertion Sort ($O(n^2)$)', 'generator' : insertion_sort(data)},
+    'b' : { 'title' : r'Bubble Sort ($O(n^2)$)', 'generator' : bubble_sort(data)},
+    'm' : { 'title' : r'Merge Sort ($O(n log(n))$)', 'generator' : merge_sort(data, 0, len(data))},
+    'h' : { 'title' : r'Heap Sort ($O(n log(n))$)', 'generator' : heap_sort(data)},
+    'q' : { 'title' : r'Quick Sort ($O(n log(n))$)', 'generator' : quick_sort(data, 0, len(data) - 1)},
 }
 
-fig, ax = plt.subplots()
+algorithm = 'x'
+while algorithm not in sort_dict.keys():
+    print('Enter the sorting algorithm.\nUsage:'
+          '\nb - bubble sort\nh - heap sort\n'
+          'i - insertion sort\nm - merge sort\n'
+          'q - quick sort\ns - selection sort\n')
+    algorithm = input("Enter the algorithm:\n")
 
-sort_type = sort_dict.get('quick_sort')
+fig, ax= plt.subplots()
+
+fig.canvas.set_window_title('Visual Sorting')
+sort_type = sort_dict.get(algorithm)
+
 
 def init():
     ax.set_title(sort_type.get('title'))
     x_data = [i for i in range(n)]
     y_data = data
-    return plt.bar(x_data, y_data, color='r')
+    return plt.bar(x_data, y_data)
 
 def update(data):
     y_data = data
     x_data = [i for i in range(n)]
-    return plt.bar(x_data, y_data, color='g')
+    return plt.bar(x_data, y_data, color='m')
 
 animation = FuncAnimation(fig=fig,
                      func=update,
