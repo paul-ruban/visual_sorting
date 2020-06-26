@@ -1,15 +1,15 @@
 # Visual Sorting in Python
 
-#Requirements
-matplotlib
+## Requirements
+- matplotlib
 
-#Usage
-run main.py
+## Usage
+- run main.py
 
-#Sorting algorithms presented
-- bubble sort
-- heap sort
-- insertion sort
-- merge sort
-- quick sort
-- selection sort
+## Sorting algorithms
+* bubble sort
+* heap sort
+* insertion sort
+* merge sort
+* quick sort
+* selection sort
