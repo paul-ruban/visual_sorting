@@ -4,7 +4,7 @@
 - matplotlib
 
 ## Usage
-- run main.py
+- run **main.py**
 
 ## Sorting algorithms
 * [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
