@@ -7,9 +7,9 @@
 - run main.py
 
 ## Sorting algorithms
-* bubble sort[bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
-* heap sort
-* insertion sort
-* merge sort
-* quick sort
-* selection sort
+* [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
+* [Heap Sort](https://en.wikipedia.org/wiki/Heapsort)
+* [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
+* [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
+* [Quick Sort](https://en.wikipedia.org/wiki/Quicksort)
+* [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
